@@ -5,26 +5,27 @@
 - HTML/CSS/JS 
 - React
 
-https://medium.com/@modernserf/whats-so-great-about-redux-ac16f1cc0f8b
-https://medium.freecodecamp.org/learning-the-fundamentals-of-functional-programming-425c9fd901c6
-
 ## Course Overview
 
 Data is the heart of your application. Without data your application 
-has little to nothing to present. While data is the heart of your 
-content how it is stored and managed is often left as an after 
+has little use beyond simple utility. While data is the heart of your 
+application how it is stored and managed is often left as an after 
 thought by developers. 
 
-Flux is a pattern that organizes data into a single store, using a 
-unidirectional flow to update the store. This creates predictable 
+Flux is a pattern that organizes data into a single store. It uses a 
+unidirectional flow to update the store. This creates a predictable 
 and stable system. Building apps around Flux makes them consistent 
-and maintainable. 
+and maintable. 
 
 This course extends React with Redux. Redux is an easy to implement 
 JavaScript implementation of Flux.
 
 The practical goal is to study tools that give you better strategies 
 for managing data in your applications. 
+
+## Simple vs Easy
+
+https://www.infoq.com/presentations/Simple-Made-Easy
 
 ## Competencies & Objectives 
 
@@ -36,23 +37,29 @@ for managing data in your applications.
 
 ## Lessons 
 
-- Class 1
-  - React Review
-- Class 2
-  - Introducing Flux/Redux what problems do they solve
-    - State, Actions, and Reducers
-- Class 3
+- [Class 1](01-intro)
+  - Application State
+  - Projects overview 
+- [Class 2](02-redux)
+  - Introducing Flux, Redux and React-Redux
+  - Actions, Reducers, and Dispatcher
+- [Class 3](03-react-redux)
   - Containers and React-Redux
     - Building components that map application state to props
-- Class 4
-  - Project timers
-- Class 5
+- [Class 4](04-timers-lab)
   - Lab
-- Class 6
+    - React Navigation tab bar
+    - Embedding a stack navigator
+- [Class 5](05-timers-lab-2)
   - Lab
-- Class 7
+    - Time in JavaScript land
+      - Date.now()
+      - setinterVal()
+- [Class 6]()
+  - Lab  
+- [Class 7]()
   - Middleware
-  - Project Passwords
+    - Project Passwords
 - Class 8
   - Lab
 - Class 9
@@ -63,6 +70,10 @@ for managing data in your applications.
   - Lab
 - Class 12
   - Lab
+  
+
+- [Class 0](00-functional-programming) 
+  - Simple introduction to functional programming concepts. 
 
 ## Projects 
 
@@ -74,8 +85,8 @@ for managing data in your applications.
 
 To pass this class you must: 
 
-- Complete 75% of the challenges
 - Complete all 3 class projects
+  - These projects must meet the provided spec
 
 ## Notes 
 
