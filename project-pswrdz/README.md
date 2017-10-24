@@ -1,13 +1,13 @@
 # Passwords Project
 
-This project will be built in React or React Native. The premise of the project 
-is a utility that generates passwords and stores them. 
+This project will be built in React or React Native. The premise of the 
+project is a utility that generates passwords and stores them. 
 
 # Intro
 
-People often have many passwords to remember, and are often required to make up
-new passwords. Weak passwords are the bane of modern life. A utility that can 
-generate and store passwords might be useful. 
+People often have many passwords to remember, and are often required 
+to make up new passwords. Weak passwords are the bane of modern life. 
+A utility that can generate and store passwords might be useful. 
 
 Imagine this project as a utility application that can do the following: 
 

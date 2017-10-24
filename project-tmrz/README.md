@@ -49,7 +49,7 @@ Your project needs to meet these criteria:
   - Keep track of elapsed time for each timer
   - Can be run and paused
   - Have a name/title
-- Use Redux to store application state
+- Use **React/Redux** to store application state
   - For each timer
     - Time
     - is running or paused
@@ -125,6 +125,41 @@ Application State from Redux.
 ### Working with time
 
 Time is a tricky...
+
+
+
+
+```
+var store = {
+  timers: [{id:d7c89f9f9bfb, isRunning: true, time: 12, label:"Eggs"}, {}, {}],
+  selectedTimer: 1
+}
+
+```
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
