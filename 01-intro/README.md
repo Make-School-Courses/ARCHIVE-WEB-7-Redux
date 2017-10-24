@@ -29,6 +29,12 @@ Consider important pieces of state, it's type, and how it is updated.
 - 3 examples of application state from published applications
   - Inlcude the data types
   
+### Twitter's store...
+
+Here is a an article by someone who disected Twitter's Redux store. 
+
+https://medium.com/statuscode/dissecting-twitters-redux-store-d7280b62c6b1
+  
 ## Class work 
 
 You will be responsible for three projetcs this term. Two fo the projects 
