@@ -97,7 +97,7 @@ https://medium.com/statuscode/dissecting-twitters-redux-store-d7280b62c6b1
 
 Watch these videos and be prepared to discuss the concepts presented.
 
-- https://www.infoq.com/presentations/Simple-Made-Easy
+- Simple made Easy - https://www.infoq.com/presentations/Simple-Made-Easy
 - The value of values - https://www.youtube.com/watch?v=-6BsiVyC1kM
 
 ## Time line
