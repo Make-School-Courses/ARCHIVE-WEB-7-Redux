@@ -24,3 +24,13 @@ values where each reducer is responsible for the piece of state
 under that key. 
 
 Paying attention to naming here is a good idea. 
+
+## Redux
+
+Redux is a JavaScript implementaion of Flux. 
+
+JavaScript Application State: https://stateofjs.com/2016/statemanagement/
+Redux: https://medium.com/@modernserf/whats-so-great-about-redux-ac16f1cc0f8b
+
+Learn about Redux from the author: https://egghead.io/courses/getting-started-with-redux
+

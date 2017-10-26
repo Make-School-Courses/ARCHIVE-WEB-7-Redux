@@ -479,12 +479,17 @@ into a tangled unreliable mess.
 After working through the example you probably still feel lost with Redux and 
 React Redux. There is no way you will get this with one pass. 
 
-The best way to solidify the knowledge is practice. 
+**The best way to solidify the knowledge is practice.**
 
 Try these challenges to reinforce the concepts. 
 
 The challeges below will modify the current project at each step to take closer 
 look at how the system works. 
+
+## Add more counters
+
+Add a few more copies of the Counter component. Then test and increment and 
+decrement each counter. What happens? 
 
 ## Add a reset button 
 
@@ -492,18 +497,18 @@ Use this challenge to follow the Action creator reducer pattern through from
 beginning to end one more time. 
 
 - These steps create a button that resets the count to 0. 
-    1. in `actions.js` add a new const `RESET_COUNT`
-    2. Add a new action creator that returns an object with a type of RESET_COUNT. 
-    3. Import the RESET_COUNT type into `counter-reducer.js`
-    4. In `counter-reducer.js` add a new case for `RESET_COUNT`. This case need only return 0
-    which is the new value of state when a counter is reset. 
-    5. In `counter.js` import the new action creator. 
-    6. Add the action creator to the other action creators in connect(). This is the 
-    second argument to the connect() method call.
-    7. Add a button, give it a text of reset. Then call your new action creator 
-    from `this.props`.
+  1. in `actions.js` add a new const `RESET_COUNT`
+  2. Add a new action creator that returns an object with a type of RESET_COUNT. 
+  3. Import the RESET_COUNT type into `counter-reducer.js`
+  4. In `counter-reducer.js` add a new case for `RESET_COUNT`. This case need only return 0
+  which is the new value of state when a counter is reset. 
+  5. In `counter.js` import the new action creator. 
+  6. Add the action creator to the other action creators in connect(). This is the 
+  second argument to the connect() method call.
+  7. Add a button, give it a text of reset. Then call your new action creator 
+  from `this.props`.
 
-## payload 
+### payload 
 
 Often an Action will require information that can not be "hard coded" into an 
 action creator. You can pass values to an action action creator as parameters, 
@@ -513,80 +518,87 @@ In this example you will add a button that will add 5, 10, or any amount to the
 count. 
 
 - Create a button that will add any amount to the count. 
-    1. Define a new type.
-    2. Add a new action creator, it should take a parameter that will hold the 
-    amount. 
-    Add a second property to the action object returned by the creator. Call 
-    it payload. The value should be the value passed into the action creator. 
-    ```
-    export const incrementBy = (n = 1) => {
-      return {
-        type: INCREMENT_BY,
-        payload: n
-      }
+  1. Define a new type.
+  2. Add a new action creator, it should take a parameter that will hold the 
+  amount. 
+  Add a second property to the action object returned by the creator. Call 
+  it payload. The value should be the value passed into the action creator. 
+  ```
+  export const incrementBy = (n = 1) => {
+    return {
+      type: INCREMENT_BY,
+      payload: n
     }
-    ``` 
-    3. In `counter-reducer.js` add a new case that increments state with the 
-    value of action.payload. Something like this: `return state += action.payload`
-    4. In counter.js import the action creator. 
-    5. Add the new action creator to connect method. 
-    6. Last, add a new button that calls this new action creator and passes a value
-    that will be added to the count.
+  }
+  ``` 
+  3. In `counter-reducer.js` add a new case that increments state with the 
+  value of action.payload. Something like this: `return state += action.payload`
+  4. In counter.js import the action creator. 
+  5. Add the new action creator to connect method. 
+  6. Last, add a new button that calls this new action creator and passes a value
+  that will be added to the count.
 
 ## More challenges
 
-Try these challenges. They require a little more effort and will require that you add
-new components, styles, and more. 
+Try these challenges. They require a little more effort. 
 
 - Keep a list of counters. Imagine the counter component as one of many counters. 
-    1. Use an array as state. 
-    2. Your action creators will need an index to indentify which counter in 
-    the array to increment. 
-    3. Your reducer should always return a copy of state. Since counter state 
-    is now an array you have to return a copy rather than modifying the original. 
-    4. Test your work by creating several counters. Be sure to create new 
-    Counters in App. Each counter will need to know it's index.
+Here are a few ideas.
+  - Use an array as state. Imagine it as an array of integers. Each holding the 
+  count value for a one counter.
+  - Your reducer will need to return a copy of the array each time you make a
+  change to one of the counters. 
+    - Why? Arrays are stored as reference. Modifying the array is a side effect. 
+    Reducers must work as pure functions returing a new value. 
+  - Each counter will reside at a differnt index in the array. The increment 
+  buttons will need to pass the index of their timer to the action creator. 
+  The action creator will need to pass the index on to the reducer. 
+  - Test your work by creating several counters. Be sure to create new 
+  Counters in App. Each counter will need to know it's index.
+    - App or another component can interate through the list of counter values 
+    and create a Counter Component for each. 
 - Make a component that shows the total of all counters. 
-    1. This won't require an action or a reducer! You can calculate the total in your 
-    `mapStateToProps()` method. This method receives the entire application state. You 
-    can use array.map() here and attach the value as a property on the object this 
-    function returns.
+  - This won't require an action or a reducer! You can calculate the total in your 
+  `mapStateToProps()` method. This method receives the entire application 
+  state. You can use array.map() here and attach the value as a property on 
+  the object this function returns.
 - Make a component that displays the count graphically. Set the height or width of box
-(View) based on the value of the counter. 
+a div based on the value of the counter. 
+- Add a label to each counter. 
+  - This means your counters will have to be stored as objects with a label and 
+  count value. You will have to retool your reducer and mapStateToProps to 
+  handle this. 
+- Add an input and a button that adds a new counter with the label entered from 
+the input. 
+- Add a delete button to each Counter that removes the Counter from the list. 
+
+## Challenges summary 
+
+- Add more timers
+- Add a reset button to the Counter 
+- Counters can increment in values other than 1
+- Keep a list of counters each with their own count
+- New Component to show the total of all counters
+- Display counter value graphically as a progress bar or other
+- Each counter has a both a label and a count
+- Able to add new counters 
+- Able to delete existing counters
 
 ## Resources 
 
 Watch this video: 
 
-- Rich Hickey: The Value of Values and Simple made Easy. These two videos provide 
-good insight to what is happening in Redux though they don't talk about Redux directly. 
-They also give you some insight into why Redux seems complex yet promises to simplify
-your work. 
-    - https://www.youtube.com/watch?v=-6BsiVyC1kM
-    - https://www.infoq.com/presentations/Simple-Made-Easy?utm_expid=14598459-9.T3WK-0v0SHy21kchz98AYg.0&utm_referrer=https%3A%2F%2Fwww.google.com%2F
-- Dan Abramov (author of Redux) explains Redux. These videos explain Redux how it works
-why it functions the way it does. They also show examples similar to what is here and in
-the challenges. 
-    - https://egghead.io/courses/getting-started-with-redux
-    
-    # Flux and Redux
+- Rich Hickey: Simple made Easy and The Value of Values. These two videos provide 
+good insight to what is happening in Redux. They don't talk about Redux 
+directly they give great insight into the programming methodology that inspired
+Flux/Redux.
+  - https://www.infoq.com/presentations/Simple-Made-Easy
+  - https://www.youtube.com/watch?v=-6BsiVyC1kM
+- Dan Abramov (the author of Redux) explains Redux. These videos explain Redux, how it works
+and why it functions the way it does. These video help explain some of the challenge questions. 
+- https://egghead.io/courses/getting-started-with-redux
+- Flux explained by Facebook engineers. This is a great look into the reasons for creating 
+Flux. It also explains real workd problems Flux was used to solve. 
+  - FB Flux: https://facebook.github.io/flux/
 
-Here we present Flux and Redux
-
-## Flux
-
-FB Flux: https://facebook.github.io/flux/
-
-Discuss this with your partner. Is this different from approaches you used?
-Do you see where you might use an approach like Flux? 
-
-## Redux
-
-Redux is a JavaScript implementaion of Flux. 
-
-JavaScript Application State: https://stateofjs.com/2016/statemanagement/
-Redux: https://medium.com/@modernserf/whats-so-great-about-redux-ac16f1cc0f8b
-
-Learn about Redux from the author: https://egghead.io/courses/getting-started-with-redux
-
-
+**Be prepared to discuss the ideas from these videos in class**
