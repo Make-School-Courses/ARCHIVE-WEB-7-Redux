@@ -48,8 +48,8 @@ https://www.infoq.com/presentations/Simple-Made-Easy
     - Building components that map application state to props
 - [Class 4](04-timers-lab)
   - Lab
-    - React Navigation tab bar
-    - Embedding a stack navigator
+    - Solving counter/timer problems
+    - Starting the password generator
 - [Class 5](05-timers-lab-2)
   - Lab
     - Time in JavaScript land

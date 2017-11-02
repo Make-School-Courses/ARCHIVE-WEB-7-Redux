@@ -574,7 +574,7 @@ the input.
 
 ## Challenges summary 
 
-- Add more timers
+- Add more Counters
 - Add a reset button to the Counter 
 - Counters can increment in values other than 1
 - Keep a list of counters each with their own count
@@ -599,6 +599,6 @@ and why it functions the way it does. These video help explain some of the chall
 - https://egghead.io/courses/getting-started-with-redux
 - Flux explained by Facebook engineers. This is a great look into the reasons for creating 
 Flux. It also explains real workd problems Flux was used to solve. 
-  - FB Flux: https://facebook.github.io/flux/
+  - https://facebook.github.io/flux/
 
 **Be prepared to discuss the ideas from these videos in class**
