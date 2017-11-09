@@ -1,67 +1,76 @@
 # Redux Thunk
 
-Readux Thunk solves the problem of handling asynchornous actions in Redux. Redux Thunk is
-a middleware for Redux.
+Readux Thunk solves the problem of handling asynchornous actions in Redux. 
+Redux Thunk is a middleware for Redux.
 
 A middleware sits between action creators and reducers. 
 
-> In computer programming, a thunk is a subroutine that is created, often automatically, 
-> to assist a call to another subroutine. Thunks are primarily used to represent an additional 
-> calculation that a subroutine needs to execute, or to call a routine that does not support 
-> the usual calling mechanism. They have a variety of other applications to compiler code 
+> In computer programming, a thunk is a subroutine that is created, often 
+> automatically, to assist a call to another subroutine. Thunks are primarily 
+> used to represent an additional calculation that a subroutine needs to 
+> execute, or to call a routine that does not support the usual calling 
+> mechanism. They have a variety of other applications to compiler code 
 > generation and in modular programming.
 
-In use a Thunk is simple. Action creators normally return an Action Object describing 
-the action. When you have an asynchronous action this becomes a problem. You can't return an action
-with data because the data hasn't been loaded yet. A thunk handles this by passing a function in place
-of the object. This function receives the dispatch from Redux and will return the action object when 
-the async request resolves.
+Action creators normally return an Action Object 
+describing the action. When you have an asynchronous action this becomes a 
+problem. You can't return an action with data because the data hasn't been 
+loaded yet. 
 
-## Axios 
+A thunk handles this by passing a function to Redux in place of the 
+action object. This function receives the dispatch from Redux and will 
+an action when the async operation resolves. 
 
-Axios is library for making XMLHttpRequests from the browser. Use it to load almost any kind of data 
-with your React projects. 
+## Fetch
 
-- https://www.npmjs.com/package/axios
+Fetch is a newer JS method for handling network requests. 
 
-Add Axios to your project with: 
-
-`$ npm install --save axios`
-
-Make a request with: 
-
-```
-axios.get('/someurl/someendpoint').then((response)=>{
-    // do stuff with your data...
-}).catch((error) => {
-    // There was an error handle it here...
-});
-```
-
-Axios makes an HTTP request and handles the request returning a promise. In the example above you'll 
-see `.then()` and `.catch()` these methods calls chained on the call to `axios.get()` are called 
-when the the promise resolves, with `then()` being called when the promise resolves successfully, 
-and `catch()` when the promise resolves with an error. 
-
-So what's a promise? 
+Fetch works with promises. You will call fetch with a path to a
+network resource and fetch return a Promise. 
 
 ## Promise 
 
-A promise is used to handle Asynchronous opperations. Use a promise when an operation may complete 
-some time in the future or might not be completed at all. 
+A promise is used to handle Asynchronous opperations. Use a promise 
+when an operation may complete some time in the future or might not 
+be completed at all. 
 
-- https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise
-- https://www.promisejs.org 
+A promise is a JS object. It will be in one of three states. 
 
-# Example with Redux Thunk
+1. pending - the async operation has not completed
+2. resolved - the async operation has completed successfully
+3. rejected - the async operation failed
+
+Promises provide a couple advantages over other network methods. 
+
+Promises significantly clean up the code required to make network
+calls. They provide a clean and easy to read syntax. 
+
+Promises can be chained together. This allows multiplt network 
+operations to be handled with in series very easily. 
+
+Promises also handle errors very elegantly. An error from any 
+promise in the chain can be handled with a single error. 
+
+### Learn more about promises
+
+Promises are similar to callbacks which you are probably 
+already familiar with. Try the challenges in these to 
+learn more about promises and callbacks. 
+
+- https://repl.it/LBJY/latest
+- https://repl.it/LBJO/latest
+- https://repl.it/LBJ2/latest
+- https://repl.it/LBLr/latest
+
+## Example with Redux Thunk
 
 Using a Redux project you might implement Thunk like this.  
 
 Thunk is a middleware for Redux. Add it via applyMiddleWare().
 
-**Main: /index.js**
+**App.js**
 
-```
+```javascript
 ...
 import thunk from 'redux-thunk';
 ...
@@ -78,50 +87,42 @@ dispatch with your Action Object, and possibly any data you loaded as part of th
 
 **actions/index.js**
 
-```
-export function fetchStuff() {
-    // Make a request with Axios
-    const request = axios.get("test.json");
-    // Handle the request with Thunk by returning a function. 
-    return (dispatch) => {          // Thunk calls the function with the dispatch object.
-        request.then((data)=>{      // The request runs and will be resolved with a promise. 
-            dispatch({              // When resolved use dispatch to send the Action object.
-                type: 'FETCH_STUFF',
-                payload: data
-            })
-        });
-    }
+```javascript
+// This action will handle updating the store.
+export const updateWeather = (obj) => {
+  return {
+    type: UPDATE_WEATHER,
+    payload: obj
+  }
 }
-```
 
-Your reducer doesn't change. The default state can be any type depending on how you want to handle
-it. Remember that state will not have a value until some data is loaded. I used a Boolean here 
-and checked for the Boolean in component props to help my component know when state data is 
-available. 
-
-**reducer.js**
-
-```
-export default function stuffReducer(state = false, action) {
-  // Check the action type
-  switch (action.type) {
-    case 'FETCH_STUFF':
-      return action.payload.data;
-    default:
-      return state;
+// This action handles loading the weather. 
+export const loadWeather = () => {
+  // Returning a function tells the dispatcher this will be
+  // an async action the dispatcher executes that function
+  // and passes itself as an arg
+  return (dispatch) => {
+    // perform an asyn method here and call on an action to
+    // with the dispatcher when it resolves. 
+    fetch(appurl, { mode: 'cors' }).then((data) => {
+      return data.json()
+    }).then((weather) => {
+      // After data is loaded call the action creator above 
+      // on dispatch with the data that was loaded. 
+      dispatch(updateWeather(weather))
+    }).catch((err) => {
+      console.log(err.message);
+    })
   }
 }
 ```
 
 ## Challenges 
 
-Load some data into your app with Axios and make it part of the Application State with Redux
-
-- Load data from a file. JSON works good. 
-- Load JSON data from a service. 
-    - OpenWeatherMap makes a good place to start their API is easy. 
-    - Find an intersting API here: 
+ 
 
 ## Resources 
 
 - https://en.wikipedia.org/wiki/Thunk
+- https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise
+- https://www.promisejs.org 
