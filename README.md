@@ -55,13 +55,14 @@ https://www.infoq.com/presentations/Simple-Made-Easy
     - Time in JavaScript land
       - Date.now()
       - setinterVal()
-- [Class 6]()
+- [Class 6](06-passwords)
   - Lab  
-- [Class 7]()
+- [Class 7](07-redux-thunk)
   - Middleware
     - Project Passwords
-- Class 8
-  - Lab
+- [Class 8](08-redux-router) 
+  - Using Router to manage navigation
+  - Lab 
 - Class 9
   - Lab
 - Class 10
@@ -70,8 +71,6 @@ https://www.infoq.com/presentations/Simple-Made-Easy
   - Lab
 - Class 12
   - Lab
-  
-
 - [Class 0](00-functional-programming) 
   - Simple introduction to functional programming concepts. 
 
