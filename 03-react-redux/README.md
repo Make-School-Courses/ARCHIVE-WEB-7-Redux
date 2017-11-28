@@ -183,7 +183,23 @@ const b = { ...a, age: 34 } // { name: "Anne", age: 34 }
 // defines a new obj with all the properties of a and overwrites age with 34
 ```
 
-Challenge - Read through the patterns here and look through your 
+Nested objects need to be identified and handled!
+
+```JavaScript
+const state = { id:1, posts:[1,2,3] }
+const newState = { ...state }
+newState.posts.push(4) // ! modifies nested reference posts !
+```
+
+Needs to copy nested object. 
+
+```JavaScript
+const state = { id:1, posts:[1,2,3] }
+const newState = { ...state, posts:[...state.posts] }
+newState.posts.push(4) // ! modifies nested reference posts !
+```
+
+**Challenge** - Read through the patterns here and look through your 
 work and look for places where you may not be copying objects 
 where you should be. 
 
