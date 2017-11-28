@@ -1,7 +1,43 @@
 # More Redux
 
 After working through the Redux tutorials in the previous section it's time to build
-a larger project with Redux. 
+a larger project with Redux.
+
+## Immutability 
+
+Immutability is an import concept in React and Redux.
+
+In React components are updated when state changes. Detecting changes in state 
+is not as easy as checking equality. 
+
+Objects are stored as reference. 
+
+```javascript
+const obj1 = { a: 0 }
+const obj2 = obj1
+
+obj1.a = 1
+
+console.log(obj2.a); // 1 - obj1 and obj2 reference the same object. 
+```
+
+Changes to the properties of an object can't be detected without looking at each 
+property and having something to compare it to. 
+
+This Place Oriented Programming. See: The Value of Values by Rich Hickey. 
+
+```javascript
+
+```
+
+- http://reactkungfu.com/2015/08/pros-and-cons-of-using-immutability-with-react-js/
+- https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object/assign
+
+
+
+
+
+
 
 # Timerz
 
