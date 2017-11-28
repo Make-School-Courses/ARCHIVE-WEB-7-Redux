@@ -4,6 +4,7 @@ This class will review Redux with a close look at react-redux.
 
 ## Objectives 
 
+- Value vs Reference
 - Immutablitity
 - Immutable strategies  
 
