@@ -162,10 +162,28 @@ To create the most reliable React and Redix applications requires a
 strict adherance to immutable state. This is a good article showing 
 all of the immutable patterns. 
 
-Challenge - Read through the patterns here and look through your 
-work and look for places where you may not be copying objects 
-where you should be. 
+This article describes patterns used to work with arrays and objects 
+and respect immutability. 
 
 https://github.com/reactjs/redux/blob/master/docs/recipes/reducers/ImmutableUpdatePatterns.md
 
+Most of the examples here revolve around `...` or 'spread' operator.
+
+```JavaScript
+const a = [1, 2, 3]
+const b = [...a] // creates a copy of a, b is [1, 2, 3]
+```
+
+This also works for objects!
+
+
+```JavaScript
+const a = { name: "Anne", age: 33 }
+const b = { ...a, age: 34 } // { name: "Anne", age: 34 }
+// defines a new obj with all the properties of a and overwrites age with 34
+```
+
+Challenge - Read through the patterns here and look through your 
+work and look for places where you may not be copying objects 
+where you should be. 
 
