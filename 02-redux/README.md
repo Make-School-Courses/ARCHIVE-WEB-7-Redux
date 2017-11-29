@@ -73,6 +73,11 @@ application takes as input and displays in views.
 
 ![image-7.png](image-7.png)
 
+
+## Views send action the store sends data to views
+
+![image-8.png](image-8.png)
+
 ---
 
 Take a closer look at each part of Redux
