@@ -593,6 +593,7 @@ the input.
 
 Watch this video: 
 
+- Great Redux tutorial: http://devguides.io/redux/
 - Rich Hickey: Simple made Easy and The Value of Values. These two videos provide 
 good insight to what is happening in Redux. They don't talk about Redux 
 directly they give great insight into the programming methodology that inspired

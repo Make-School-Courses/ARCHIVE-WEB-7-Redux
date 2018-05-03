@@ -32,7 +32,7 @@ https://www.infoq.com/presentations/Simple-Made-Easy
 1. Recognize Application state.
 1. Organize state into a single state container/source.   
 1. Compare Flux/Redux state management to other systems like MVC.
-1. Design applicaton state management system with Flux/Redux
+1. Design applicaton state management system with Flux/Redux.
 1. Identify component based architecture. 
 
 ## Lessons 
@@ -76,9 +76,14 @@ https://www.infoq.com/presentations/Simple-Made-Easy
 
 ## Projects 
 
-- Timers
-- Passwords
-- Custom Project
+You will build two project over the length of this course. There are four projects
+listed below. Pick any two to build. These apps can be built with React or 
+React-Native the choice is yours. 
+
+- Passwords: Generates random passwords, and stores them in a persistent list.  
+- Timers: Keeps a list of timers and persists the time. 
+- Tetris: The game tetris built with React and Redux. 
+- Custom Project: Your ideas that include React and Redux. 
 
 ## Evaluations
 
