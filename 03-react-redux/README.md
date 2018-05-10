@@ -1,12 +1,40 @@
 # React Redux
 
-This class will review Redux with a close look at react-redux.
+Redux uses immutable immutable state to create 
+more reliable and predictable state management.
 
 ## Objectives 
 
 - Value vs Reference
+  - value equality 
+  - reference equality
 - Immutablitity
 - Immutable strategies  
+
+### Value vs Reference
+
+Variables in JavaScript only hold values. 
+
+In the case of Objects (this includes Arrays, 
+and functions) the value stored a variable is 
+a *reference* to the Object.
+
+### Comparing values and references
+
+When comparing values you get what you expect. 
+If the values are the same they are equal. 
+
+When comparing references it's the reference
+that is compared. If the reference is the same, 
+in other words if two variables contain a 
+reference to the same Object then they are 
+equal. 
+
+{} === {}
+
+# Notes
+
+
 
 ## Value vs Reference
 
