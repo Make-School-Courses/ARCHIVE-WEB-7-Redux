@@ -19,7 +19,7 @@ Which you import depend on what features you will use. Follow the
 
 For web projects import react-router-dom
 
-`$ npm install --save react-router-dom`
+`npm install --save react-router-dom`
 
 ### React Router Dom Components
 
