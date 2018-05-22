@@ -91,7 +91,44 @@ following assertions:
 Assertions can be pretty granular. Depending on what 
 is being tested. In some cases more detail may not be helpful
 in other cases the added detail can help identify 
-problems when they occur. 
+problems when they occur.
+
+### Write some tests
+
+Write your tests in files named with '*.test.js'. The test framework 
+will look for files with this naming scheme and run the test found there. 
+
+Try it out for yourself with your actions. 
+
+- Add a file with the name 'index.test.js' to the actions folder. 
+- Import an action and an action creator into this file. 
+
+`import { NEW_TIMER, addTimer } from './index';`
+
+- Add a test. 
+
+```JavaScript
+describe('test actions', () => {
+  
+}
+```
+
+- Next add a test case
+
+```JavaScript
+describe('test actions', () => {
+  it('should create an action with type NEW_TIMER', () => {
+    const tested = addTimer();
+    expect(typeof tested).toBe('object');       // tested should be an object
+    expect(typeof tested.type).toBe('string');  // tested.type should be string
+    expect(tested.type).toBe(NEW_TIMER);        // tested.type should equal NEW_TIMER
+  });
+}
+```
+
+Here the `it()` describes a test case, and the function block contains
+the assertions for that test.
+
 
 Redux Mock Store
 
