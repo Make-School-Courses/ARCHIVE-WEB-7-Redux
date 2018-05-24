@@ -1,4 +1,4 @@
-# Testing
+# Testing Redux
 
 Testing is import in large scale apps. In small apps
 you may find that you write more test code than non
