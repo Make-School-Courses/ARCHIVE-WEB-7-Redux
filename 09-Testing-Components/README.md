@@ -242,5 +242,8 @@ That's a lot of methods. Read the descriptions for these at the link above.
 You can divide these methods into methods that search the DOM of the 
 rendered component, setup, and utilities. 
 
+## Resources 
 
+- End to End Testing with Puppeteer
+- https://blog.bitsrc.io/testing-your-react-app-with-puppeteer-and-jest-c72b3dfcde59
 
