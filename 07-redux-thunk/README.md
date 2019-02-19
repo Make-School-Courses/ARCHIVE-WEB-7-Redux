@@ -88,14 +88,6 @@ dispatch with your Action Object, and possibly any data you loaded as part of th
 **actions/index.js**
 
 ```javascript
-// This action will handle updating the store.
-export const updateWeather = (obj) => {
-  return {
-    type: UPDATE_WEATHER,
-    payload: obj
-  }
-}
-
 // This action handles loading the weather.
 export const loadWeather = () => {
   // Returning a function tells the dispatcher this will be
@@ -113,6 +105,14 @@ export const loadWeather = () => {
     }).catch((err) => {
       console.log(err.message);
     })
+  }
+}
+
+// This action will handle updating the store.
+export const updateWeather = (obj) => {
+  return {
+    type: UPDATE_WEATHER,
+    payload: obj
   }
 }
 ```
