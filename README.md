@@ -1,4 +1,4 @@
-# Front End Web 2
+# WEB 7 : Redux : Front End Web 2
 
 ## Perequisites 
 
