@@ -1,4 +1,6 @@
-# WEB 7 : Redux : Front End Web 2
+# ARCHIVE - WEB 7 : Redux : Front End Web 2
+
+## NOTE: This repo is no longer maintained
 
 ## Perequisites 
 
